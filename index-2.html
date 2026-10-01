@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="GESTKA — Sistema de Gestão Escolar">
+  <title>GESTKA | Gestão Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- LOGIN -->
+  <section id="loginScreen" class="screen login-screen">
+    <div class="login-card">
+      <div class="brand brand-large">
+        <div class="brand-mark">G</div>
+        <div>
+          <strong>GESTKA</strong>
+          <span>Sistema de Gestão Escolar</span>
+        </div>
+      </div>
+
+      <div class="login-heading">
+        <p class="eyebrow">BEM-VINDO</p>
+        <h1>Acesse sua conta</h1>
+        <p>Entre no ambiente da sua escola de forma simples e segura.</p>
+      </div>
+
+      <form id="loginForm">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seuemail@escola.com" autocomplete="username" required>
+
+        <label for="password">Senha</label>
+        <div class="password-wrap">
+          <input id="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+          <button type="button" class="icon-btn" id="togglePassword" aria-label="Mostrar senha">◉</button>
+        </div>
+
+        <div class="login-options">
+          <label class="check"><input type="checkbox" id="remember"> <span>Lembrar acesso</span></label>
+          <button type="button" class="link-btn" id="forgotBtn">Esqueci minha senha</button>
+        </div>
+
+        <button class="primary-btn full" type="submit">Entrar</button>
+      </form>
+
+      <div class="demo-box">
+        <strong>Acesso de demonstração</strong>
+        <p>Use qualquer e-mail e senha para entrar. O perfil pode ser escolhido no menu do sistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="appScreen" class="app-screen hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-mark">G</div>
+          <div>
+            <strong>GESTKA</strong>
+            <span>Gestão Escolar</span>
+          </div>
+        </div>
+        <button class="mobile-close" id="closeSidebar">×</button>
+      </div>
+
+      <div class="school-card">
+        <div class="school-avatar">GE</div>
+        <div>
+          <strong>Minha Escola</strong>
+          <span>Unidade principal</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <button class="nav-item active" data-page="inicio"><span>⌂</span> Início</button>
+        <button class="nav-item" data-page="alunos"><span>♙</span> Alunos</button>
+        <button class="nav-item" data-page="turmas"><span>▦</span> Turmas</button>
+        <button class="nav-item" data-page="frequencia"><span>✓</span> Frequência</button>
+        <button class="nav-item" data-page="notas"><span>▤</span> Notas</button>
+        <button class="nav-item" data-page="agenda"><span>◷</span> Agenda</button>
+        <button class="nav-item" data-page="comunicados"><span>◉</span> Comunicados</button>
+        <button class="nav-item" data-page="relatorios"><span>▥</span> Relatórios</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="configuracoes"><span>⚙</span> Configurações</button>
+        <button class="logout-btn" id="logoutBtn"><span>↪</span> Sair</button>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="openSidebar">☰</button>
+          <div>
+            <p class="breadcrumb">GESTKA / <span id="pageName">Início</span></p>
+            <h2 id="pageTitle">Painel da escola</h2>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="round-btn" id="notificationBtn" aria-label="Notificações">🔔<i></i></button>
+          <div class="user-menu">
+            <div class="avatar" id="userAvatar">NA</div>
+            <div class="user-info">
+              <strong id="userName">Usuário GESTKA</strong>
+              <span id="userRole">Direção</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="pageContent" class="page-content"></div>
+    </main>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
